@@ -6,7 +6,6 @@
 #include <string>
 #include <file_descriptor.h>
 #include <sys/socket.h>
-#include <netinet/in.h>
 
 using std::string;
 

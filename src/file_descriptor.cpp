@@ -22,3 +22,7 @@ FileDescriptor::~FileDescriptor(){
     if(this->fd != -1)
         close(this->fd);
 }
+
+int FileDescriptor::get_fd(){
+    return this->fd;
+}

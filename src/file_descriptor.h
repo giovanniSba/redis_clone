@@ -15,6 +15,8 @@ class FileDescriptor{
         FileDescriptor(const FileDescriptor&) = delete;
         FileDescriptor& operator=(const FileDescriptor&) = delete;
 
+        int get_fd();
+
         ~FileDescriptor();
 };
 
