@@ -1,7 +1,7 @@
 #include <file_descriptor.h>
 #include <unistd.h>
 
-FileDescriptor::FileDescriptor(int descriptor = -1) : fd(descriptor){} 
+FileDescriptor::FileDescriptor(int descriptor) : fd(descriptor){} 
 
 FileDescriptor& FileDescriptor::operator=(FileDescriptor&& other) noexcept{
     if(this != &other){

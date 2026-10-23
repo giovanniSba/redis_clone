@@ -3,6 +3,7 @@
 #include "file_descriptor.h"
 #include <string>
 #include <optional>
+#include <unistd.h>
 
 using std::string;
 
@@ -28,7 +29,7 @@ class ClientConnection{
         std::optional<string> extract_command();
 
         // send data stored in the output buffer
-        void flush_output();
+        ssize_t flush_output();
 
       
 };

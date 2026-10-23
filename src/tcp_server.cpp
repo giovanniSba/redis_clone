@@ -7,7 +7,7 @@ TcpServer::TcpServer(uint16_t port, uint16_t connection_number):
 port(port), connection_number(connection_number){};
 
 // init server sock 
-std::variant<FileDescriptor, string> TcpServer::init_server(){
+std::optional<string> TcpServer::init_server(){
     // create a TCP socket
     int sock = socket(AF_INET, SOCK_STREAM, 0); 
     if(sock < 0){ 
@@ -47,5 +47,6 @@ std::variant<FileDescriptor, string> TcpServer::init_server(){
         return "Error when setting the sock to non-blocking mode";
     }
 
-    return FileDescriptor(sock); 
+    this->fd = FileDescriptor(sock); 
+    return std::nullopt; 
 }
